@@ -16,44 +16,66 @@ function initContent() {
 
   // 인사말 주입
   const greetingBox = document.getElementById("greeting-message-box");
-  if (greetingBox) {
+  if (greetingBox && cfg.greeting && cfg.greeting.message) {
     greetingBox.innerHTML = cfg.greeting.message
       .map(line => line === "" ? "<br>" : `<p>${line}</p>`)
       .join("");
   }
 
   // 부모님 및 신랑신부 이름
-  document.getElementById("groom-parents").textContent = `${cfg.groom.father} · ${cfg.groom.mother}`;
-  document.getElementById("bride-parents").textContent = `${cfg.bride.father} · ${cfg.bride.mother}`;
-  document.getElementById("groom-name").textContent = cfg.groom.name.slice(-2); // 익준
-  document.getElementById("bride-name").textContent = cfg.bride.name.slice(-2); // 규리
+  const gp = document.getElementById("groom-parents");
+  if (gp) gp.textContent = `${cfg.groom.father} · ${cfg.groom.mother}`;
+  const bp = document.getElementById("bride-parents");
+  if (bp) bp.textContent = `${cfg.bride.father} · ${cfg.bride.mother}`;
+  const gn = document.getElementById("groom-name");
+  if (gn) gn.textContent = cfg.groom.name.slice(-2);
+  const bn = document.getElementById("bride-name");
+  if (bn) bn.textContent = cfg.bride.name.slice(-2);
 
   // 예식장 정보
-  document.getElementById("loc-venue-name").textContent = cfg.venue.name;
-  document.getElementById("loc-venue-hall").textContent = cfg.venue.hall;
-  document.getElementById("loc-venue-address").textContent = cfg.venue.address;
-  document.getElementById("loc-venue-phone").textContent = `TEL. ${cfg.venue.tel}`;
+  const lvn = document.getElementById("loc-venue-name");
+  if (lvn) lvn.textContent = cfg.venue.name;
+  const lvh = document.getElementById("loc-venue-hall");
+  if (lvh) lvh.textContent = cfg.venue.hall;
+  const lva = document.getElementById("loc-venue-address");
+  if (lva) lva.textContent = cfg.venue.address;
+  const lvp = document.getElementById("loc-venue-phone");
+  if (lvp) lvp.textContent = `TEL. ${cfg.venue.tel}`;
 
   // 네비게이션 앱 링크
-  document.getElementById("btn-nav-kakao").href = cfg.venue.navLinks.kakao;
-  document.getElementById("btn-nav-naver").href = cfg.venue.navLinks.naver;
-  document.getElementById("btn-nav-tmap").href = cfg.venue.navLinks.tmap;
+  const bnk = document.getElementById("btn-nav-kakao");
+  if (bnk) bnk.href = cfg.venue.navLinks.kakao;
+  const bnn = document.getElementById("btn-nav-naver");
+  if (bnn) bnn.href = cfg.venue.navLinks.naver;
+  const bnt = document.getElementById("btn-nav-tmap");
+  if (bnt) bnt.href = cfg.venue.navLinks.tmap;
 
   // 계좌 정보
-  document.getElementById("groom-acc-bank").textContent = cfg.groom.account.bank;
-  document.getElementById("groom-acc-num").textContent = cfg.groom.account.number;
-  document.getElementById("groom-acc-holder").textContent = `예금주 : ${cfg.groom.account.holder}`;
+  const gab = document.getElementById("groom-acc-bank");
+  if (gab) gab.textContent = cfg.groom.account.bank;
+  const gan = document.getElementById("groom-acc-num");
+  if (gan) gan.textContent = cfg.groom.account.number;
+  const gah = document.getElementById("groom-acc-holder");
+  if (gah) gah.textContent = `예금주 : ${cfg.groom.account.holder}`;
 
-  document.getElementById("bride-acc-bank").textContent = cfg.bride.account.bank;
-  document.getElementById("bride-acc-num").textContent = cfg.bride.account.number;
-  document.getElementById("bride-acc-holder").textContent = `예금주 : ${cfg.bride.account.holder}`;
-
-  // 저장된 커스텀 사진이 있으면 복원
-  restoreSavedPhotos();
+  const bab = document.getElementById("bride-acc-bank");
+  if (bab) bab.textContent = cfg.bride.account.bank;
+  const ban = document.getElementById("bride-acc-num");
+  if (ban) ban.textContent = cfg.bride.account.number;
+  const bah = document.getElementById("bride-acc-holder");
+  if (bah) bah.textContent = `예금주 : ${cfg.bride.account.holder}`;
 }
 
 // 2. 실시간 D-Day 카운트다운 타이머
 function initCountdown() {
+  const cdDays = document.getElementById("cd-days");
+  const cdHours = document.getElementById("cd-hours");
+  const cdMinutes = document.getElementById("cd-minutes");
+  const cdSeconds = document.getElementById("cd-seconds");
+  const ddayTitle = document.getElementById("dday-title");
+
+  if (!cdDays || !cdHours || !cdMinutes || !cdSeconds) return;
+
   const targetDate = new Date(WEDDING_CONFIG.dateTime.target).getTime();
 
   function update() {
@@ -61,11 +83,11 @@ function initCountdown() {
     const diff = targetDate - now;
 
     if (diff <= 0) {
-      document.getElementById("cd-days").textContent = "00";
-      document.getElementById("cd-hours").textContent = "00";
-      document.getElementById("cd-minutes").textContent = "00";
-      document.getElementById("cd-seconds").textContent = "00";
-      document.getElementById("dday-title").textContent = "익준 ♥ 규리의 결혼식 당일입니다!";
+      cdDays.textContent = "000";
+      cdHours.textContent = "00";
+      cdMinutes.textContent = "00";
+      cdSeconds.textContent = "00";
+      if (ddayTitle) ddayTitle.textContent = "익준 ♥ 규리의 결혼식 당일입니다!";
       return;
     }
 
@@ -74,10 +96,10 @@ function initCountdown() {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    document.getElementById("cd-days").textContent = String(days).padStart(3, "0");
-    document.getElementById("cd-hours").textContent = String(hours).padStart(2, "0");
-    document.getElementById("cd-minutes").textContent = String(minutes).padStart(2, "0");
-    document.getElementById("cd-seconds").textContent = String(seconds).padStart(2, "0");
+    cdDays.textContent = String(days).padStart(3, "0");
+    cdHours.textContent = String(hours).padStart(2, "0");
+    cdMinutes.textContent = String(minutes).padStart(2, "0");
+    cdSeconds.textContent = String(seconds).padStart(2, "0");
   }
 
   update();
@@ -91,15 +113,19 @@ function initAccordions() {
   const brideToggle = document.getElementById("acc-bride-toggle");
   const brideBody = document.getElementById("acc-bride-body");
 
-  groomToggle.addEventListener("click", () => {
-    groomToggle.classList.toggle("active");
-    groomBody.classList.toggle("show");
-  });
+  if (groomToggle && groomBody) {
+    groomToggle.addEventListener("click", () => {
+      groomToggle.classList.toggle("active");
+      groomBody.classList.toggle("show");
+    });
+  }
 
-  brideToggle.addEventListener("click", () => {
-    brideToggle.classList.toggle("active");
-    brideBody.classList.toggle("show");
-  });
+  if (brideToggle && brideBody) {
+    brideToggle.addEventListener("click", () => {
+      brideToggle.classList.toggle("active");
+      brideBody.classList.toggle("show");
+    });
+  }
 }
 
 // 4. 갤러리 그리드 생성 및 라이트박스
@@ -108,6 +134,7 @@ let galleryImagesList = [...WEDDING_CONFIG.images.gallery];
 
 function initGallery() {
   const container = document.getElementById("gallery-grid-container");
+  if (!container) return;
   container.innerHTML = "";
 
   galleryImagesList.forEach((src, idx) => {
@@ -132,13 +159,16 @@ function openLightbox(idx) {
   const img = document.getElementById("lightbox-img");
   const counter = document.getElementById("lightbox-counter");
 
-  img.src = galleryImagesList[idx];
-  counter.textContent = `${idx + 1} / ${galleryImagesList.length}`;
-  modal.classList.add("show");
+  if (modal && img && counter) {
+    img.src = galleryImagesList[idx];
+    counter.textContent = `${idx + 1} / ${galleryImagesList.length}`;
+    modal.classList.add("show");
+  }
 }
 
 function closeLightboxDirect() {
-  document.getElementById("lightbox-modal").classList.remove("show");
+  const modal = document.getElementById("lightbox-modal");
+  if (modal) modal.classList.remove("show");
 }
 
 function closeLightbox(e) {
@@ -164,13 +194,22 @@ function initModals() {
   const contactBtn = document.getElementById("open-contact-modal-btn");
   const contactModal = document.getElementById("contact-modal");
 
-  contactBtn.addEventListener("click", () => {
-    contactModal.classList.add("show");
-  });
+  if (contactBtn && contactModal) {
+    contactBtn.addEventListener("click", () => {
+      contactModal.classList.add("show");
+    });
+
+    contactModal.addEventListener("click", (e) => {
+      if (e.target.id === "contact-modal") {
+        closeContactModal();
+      }
+    });
+  }
 }
 
 function closeContactModal() {
-  document.getElementById("contact-modal").classList.remove("show");
+  const contactModal = document.getElementById("contact-modal");
+  if (contactModal) contactModal.classList.remove("show");
 }
 
 // 계좌번호 복사 기능
@@ -179,33 +218,45 @@ function copyAccount(side) {
   const target = side === "groom" ? cfg.groom.account : cfg.bride.account;
   const textToCopy = `${target.bank} ${target.number} (예금주: ${target.holder})`;
 
-  navigator.clipboard.writeText(textToCopy).then(() => {
-    showToast(`${target.bank} 계좌번호가 복사되었습니다.`);
-  }).catch(() => {
-    // fallback
-    const tempInput = document.createElement("input");
-    tempInput.value = textToCopy;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-    showToast(`${target.bank} 계좌번호가 복사되었습니다.`);
-  });
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      showToast(`${target.bank} 계좌번호가 복사되었습니다.`);
+    }).catch(() => {
+      fallbackCopy(textToCopy, target.bank);
+    });
+  } else {
+    fallbackCopy(textToCopy, target.bank);
+  }
+}
+
+function fallbackCopy(text, bank) {
+  const tempInput = document.createElement("input");
+  tempInput.value = text;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+  showToast(`${bank} 계좌번호가 복사되었습니다.`);
 }
 
 // 링크 복사
 function copyPageLink() {
   const url = window.location.href;
-  navigator.clipboard.writeText(url).then(() => {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => {
+      showToast("청첩장 링크가 복사되었습니다.");
+    }).catch(() => {
+      showToast("청첩장 링크가 복사되었습니다.");
+    });
+  } else {
     showToast("청첩장 링크가 복사되었습니다.");
-  }).catch(() => {
-    showToast("청첩장 링크가 복사되었습니다.");
-  });
+  }
 }
 
 // 토스트 메시지
 function showToast(msg) {
   const toast = document.getElementById("toast-message");
+  if (!toast) return;
   toast.textContent = msg;
   toast.classList.add("show");
   setTimeout(() => {
@@ -216,10 +267,9 @@ function showToast(msg) {
 // RSVP 폼 제출
 function handleRSVP(e) {
   e.preventDefault();
-  const name = document.getElementById("rsvp-name").value;
+  const nameInput = document.getElementById("rsvp-name");
+  const name = nameInput ? nameInput.value : "하객";
   showToast(`${name} 님의 참석 여부가 전달되었습니다. 감사합니다!`);
-  document.getElementById("rsvp-form").reset();
+  const form = document.getElementById("rsvp-form");
+  if (form) form.reset();
 }
-
-
-
