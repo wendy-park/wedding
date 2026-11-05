@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>석익준 ♥ 박규리 | A Letter From Us 💌</title>
+  <meta name="description" content="서로 마주보며 다져온 시간들, 이제 한 곳을 바라보며 걸어갑니다. 2027. 06. 12. 석익준 · 박규리의 결혼식에 초대합니다." />
+  <meta property="og:title" content="석익준 ♥ 박규리 | 감성 편지 청첩장" />
+  <meta property="og:description" content="저희 두 사람의 새로운 출발을 가까이에서 축복해 주시면 감사하겠습니다. 2027. 06. 12 SAT PM 2:50, 루이비스컨벤션 강서점 세인트그레이스홀" />
+  <meta property="og:image" content="../images/cover.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Nanum+Pen+Script&family=Gowun+Batang:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════ BGM 플로팅 플레이어 ══════════ -->
+  <div id="bgm-bar" class="bgm-bar" aria-label="배경음악 플레이어">
+    <button id="bgm-toggle" class="bgm-toggle" type="button" aria-pressed="false" aria-label="음악 재생">
+      <span class="bgm-icon" id="bgm-icon">🎧</span>
+    </button>
+    <div class="bgm-meta">
+      <p class="bgm-label">NOW PLAYING</p>
+      <p class="bgm-title" id="bgm-title">우리만의 추억이 담긴 노래 ♬</p>
+    </div>
+    <button id="bgm-mute" class="bgm-mute" type="button" aria-label="음소거">
+      <span id="bgm-mute-icon">🔈</span>
+    </button>
+  </div>
+
+  <div class="paper-wrap">
+
+    <!-- ══════════ 섹션 1 · 편지 봉투 인트로 ══════════ -->
+    <header class="sec sec-intro" id="sec-intro">
+      <p class="intro-top-eng">A LETTER FROM US</p>
+      <div class="envelope-scene" id="envelope-scene">
+        <div class="polaroid polaroid-intro">
+          <div class="polaroid-imgwrap">
+            <img src="../images/cover.jpg" alt="석익준과 박규리의 웨딩 사진" loading="eager" />
+          </div>
+          <p class="polaroid-caption gaegu">save the date, our love 💌</p>
+          <span class="sticker-tape tape-1" aria-hidden="true"></span>
+        </div>
+        <div class="envelope" aria-hidden="true">
+          <div class="envelope-back"></div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+          <span class="sticker-heart">💌</span>
+        </div>
+      </div>
+      <div class="letter-text" id="letter-text">
+        <p class="handwrite">서로 마주보며 다져온 시간들을<br />
+        이제 한 곳을 바라보며<br />
+        걸어갈 수 있는 큰 사랑으로 키우고자 합니다.</p>
+        <p class="handwrite">저희 두 사람의 새로운 출발을<br />
+        가까이에서 축복해 주시면<br />감사하겠습니다.</p>
+        <p class="handwrite sign">석익준 · 박규리 <span class="small-eng">olim</span></p>
+        <p class="scroll-hint" aria-hidden="true">아래로 스크롤 해주세요 ↓</p>
+      </div>
+    </header>
+
+    <!-- ══════════ 섹션 3 · 메인 비주얼 ══════════ -->
+    <section class="sec sec-main">
+      <figure class="main-visual">
+        <img src="../images/cover.jpg" alt="메인 웨딩 화보" loading="lazy" />
+        <figcaption class="main-visual-text">
+          <p class="caligraphy">Our</p>
+          <p class="caligraphy italic">Wedding Day</p>
+          <p class="names-eng">SEOK IK JUN&nbsp;&nbsp;♥&nbsp;&nbsp;PARK GYU LI</p>
+        </figcaption>
+      </figure>
+      <div class="info-card">
+        <p class="info-date">2027년 6월 12일 토요일 오후 2시 50분</p>
+        <p class="info-venue">루이비스컨벤션 강서점 8층 세인트그레이스홀</p>
+      </div>
+    </section>
+
+    <!-- ══════════ 섹션 4 · 스크랩북 폴라로이드 갤러리 ══════════ -->
+    <section class="sec sec-gallery">
+      <h2 class="sec-title handwrite">시간과 마음을 한 장면에 담아 🧸</h2>
+      <p class="sec-sub-eng">OUR LITTLE SCRAPBOOK</p>
+      <div class="scrapbook" id="scrapbook">
+        <!-- 폴라로이드 카드는 script.js에서 안전하게 생성됩니다 -->
+      </div>
+    </section>
+
+    <!-- ══════════ 섹션 5 · 하트 달력 & D-day ══════════ -->
+    <section class="sec sec-dday">
+      <h2 class="sec-title handwrite">기다림마저 설렘이 되는 우리의 D-day 💗</h2>
+      <p class="sec-sub-eng">COUNTING EVERY DAY WITH YOU</p>
+      <div class="heart-calendar-card">
+        <p class="cal-month"><span class="cal-month-eng">June</span> 2027년 6월</p>
+        <table class="cal-table" id="cal-table" aria-label="2027년 6월 달력">
+          <!-- 달력은 script.js에서 안전하게 생성됩니다 -->
+        </table>
+        <p class="cal-note gaegu">💌 6.12 SAT — our happiest day</p>
+      </div>
+      <div class="dday-box" id="dday-box">
+        <p class="dday-label">석익준 ♥ 박규리의 결혼식까지</p>
+        <div class="dday-timer" id="dday-timer">
+          <span class="dday-num"><b id="dd-d">--</b><i>DAYS</i></span>
+          <span class="dday-colon">:</span>
+          <span class="dday-num"><b id="dd-h">--</b><i>HOURS</i></span>
+          <span class="dday-colon">:</span>
+          <span class="dday-num"><b id="dd-m">--</b><i>MIN</i></span>
+          <span class="dday-colon">:</span>
+          <span class="dday-num"><b id="dd-s">--</b><i>SEC</i></span>
+        </div>
+        <p class="dday-text" id="dday-text">2027. 06. 12 SAT PM 2:50</p>
+      </div>
+    </section>
+
+    <!-- ══════════ 섹션 6 · 축하 방명록 ══════════ -->
+    <section class="sec sec-guest">
+      <h2 class="sec-title handwrite">소중한 마음이 모여 완성되는 특별한 선물 ✨</h2>
+      <p class="sec-sub-eng">GUEST BOOK</p>
+      <form class="guest-form" id="guest-form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="guest-name">성함</label>
+            <input type="text" id="guest-name" name="name" maxlength="20" placeholder="성함을 입력해 주세요" />
+          </div>
+          <div class="field">
+            <label for="guest-pw">비밀번호</label>
+            <input type="password" id="guest-pw" name="password" maxlength="20" inputmode="numeric" placeholder="비밀번호 (4자리 이상)" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="guest-msg">축하 메시지</label>
+          <textarea id="guest-msg" name="message" maxlength="300" rows="4" placeholder="따뜻한 축하의 한마디를 남겨 주세요 ♥"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">작성하기 💌</button>
+        <p class="field-note">작성하신 메시지는 이 브라우저에 안전하게 저장됩니다.</p>
+      </form>
+      <div class="guest-list" id="guest-list">
+        <!-- 방명록 카드는 script.js에서 안전하게 생성됩니다 -->
+      </div>
+      <p class="guest-empty" id="guest-empty" hidden>가장 먼저 축하의 마음을 남겨보세요 🌷</p>
+    </section>
+
+    <!-- ══════════ 섹션 7 · RSVP ══════════ -->
+    <section class="sec sec-rsvp">
+      <p class="sec-sub-eng">RSVP</p>
+      <h2 class="sec-title handwrite">소중한 만남을 세심하게 준비하는 간편한 방법</h2>
+      <button type="button" class="btn btn-primary btn-block" id="rsvp-open">참석 여부 전달하기 💐</button>
+      <div class="rsvp-panel" id="rsvp-panel" hidden>
+        <form id="rsvp-form" novalidate>
+          <div class="field">
+            <label>참석 여부</label>
+            <div class="chip-row" id="rsvp-attend">
+              <label class="chip"><input type="radio" name="attend" value="참석" checked /><span>참석합니다 🎉</span></label>
+              <label class="chip"><input type="radio" name="attend" value="불참" /><span>불참합니다 🙏</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label>신랑 · 신부측</label>
+            <div class="chip-row">
+              <label class="chip"><input type="radio" name="side" value="신랑측" checked /><span>신랑측</span></label>
+              <label class="chip"><input type="radio" name="side" value="신부측" /><span>신부측</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label>식사 예정</label>
+            <div class="chip-row">
+              <label class="chip"><input type="radio" name="meal" value="식사 예정" checked /><span>식사 예정 🍽️</span></label>
+              <label class="chip"><input type="radio" name="meal" value="식사 안함" /><span>식사 안함</span></label>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="rsvp-name">성함</label>
+              <input type="text" id="rsvp-name" maxlength="20" placeholder="성함" />
+            </div>
+            <div class="field">
+              <label for="rsvp-count">동행 인원</label>
+              <input type="number" id="rsvp-count" min="0" max="20" value="0" inputmode="numeric" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="rsvp-phone">연락처</label>
+            <input type="tel" id="rsvp-phone" maxlength="15" placeholder="010-0000-0000" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">전송하기</button>
+          <p class="field-note">응답은 신랑 · 신부에게 전달되며, 본 브라우저에도 저장됩니다.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ══════════ 섹션 8 · 오시는 길 & 계좌번호 ══════════ -->
+    <section class="sec sec-map">
+      <p class="sec-sub-eng">LOCATION</p>
+      <h2 class="sec-title handwrite">오시는 길</h2>
+      <div class="map-card">
+        <p class="map-hall">루이비스컨벤션 강서점</p>
+        <p class="map-floor">8층 세인트그레이스홀</p>
+        <p class="map-addr">서울 강서구 양천로 476</p>
+        <p class="map-subway gaegu">🚇 지하철 9호선 가양역 10번 출구</p>
+        <div class="nav-btns">
+          <a class="nav-btn kakao" id="nav-kakao" href="#" target="_blank" rel="noopener noreferrer"><span>💛</span> 카카오맵</a>
+          <a class="nav-btn naver" id="nav-naver" href="#" target="_blank" rel="noopener noreferrer"><span>🟢</span> 네이버 지도</a>
+          <a class="nav-btn tmap" id="nav-tmap" href="#" target="_blank" rel="noopener noreferrer"><span>🔵</span> 티맵</a>
+        </div>
+      </div>
+
+      <div class="account-area">
+        <p class="account-title">축하의 마음을 전해주세요</p>
+        <div class="account-card" id="acc-groom">
+          <div class="account-info">
+            <p class="account-bank">국민은행 928702-01-447518</p>
+            <p class="account-holder">석익준 <span class="small-eng">groom</span></p>
+          </div>
+          <button type="button" class="btn btn-copy" data-copy="928702-01-447518">복사</button>
+        </div>
+        <div class="account-card" id="acc-bride">
+          <div class="account-info">
+            <p class="account-bank">신한은행 110-384-592182</p>
+            <p class="account-holder">박규리 <span class="small-eng">bride</span></p>
+          </div>
+          <button type="button" class="btn btn-copy" data-copy="110-384-592182">복사</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ 섹션 9 · 영화 엔딩 크레딧 ══════════ -->
+    <section class="sec sec-ending">
+      <p class="sec-sub-eng">THE END</p>
+      <div class="ending-credits">
+        <p class="credit-line"><span>PRODUCED BY</span><b>석익준 &amp; 박규리</b></p>
+        <p class="credit-line"><span>STORY BEGINS</span><b>2027. 06. 12</b></p>
+        <p class="credit-line"><span>DIRECTED BY</span><b>서로를 향한 사랑과 믿음</b></p>
+        <p class="credit-line"><span>SPECIAL THANKS TO</span><b>언제나 힘이 되어주시는 부모님과 소중한 분들</b></p>
+      </div>
+      <p class="ending-forever">FOREVER WITH YOU</p>
+      <p class="ending-gaegu gaegu">🎬 마지막 장면까지 특별하게, 영화처럼 마무리하는 우리의 초대 🍿</p>
+    </section>
+
+    <!-- ══════════ 섹션 10 · 공유하기 ══════════ -->
+    <section class="sec sec-share">
+      <p class="sec-sub-eng">SHARE</p>
+      <p class="share-text">사랑을 나누며 함께 기뻐할 이 순간,<br />지인들에게도 알려 주세요 💌</p>
+      <div class="share-btns">
+        <button type="button" class="btn btn-primary" id="btn-copy-link">링크 복사</button>
+        <a class="btn btn-kakao" id="btn-kakao" href="#" target="_blank" rel="noopener noreferrer">카카오톡 공유</a>
+      </div>
+      <footer class="site-footer">
+        <p>석익준 ♥ 박규리 · 2027. 06. 12</p>
+        <p class="footer-eng">THANK YOU FOR BEING PART OF OUR STORY</p>
+      </footer>
+    </section>
+
+  </div>
+
+  <!-- 라이트박스 모달 -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="사진 크게 보기" hidden>
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="닫기">✕</button>
+    <figure class="lightbox-inner">
+      <img id="lightbox-img" src="" alt="확대된 사진" />
+      <figcaption id="lightbox-caption" class="gaegu"></figcaption>
+    </figure>
+  </div>
+
+  <!-- 토스트 -->
+  <div class="toast" id="toast" aria-live="polite" hidden></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
