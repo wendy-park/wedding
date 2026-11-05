@@ -39,36 +39,6 @@ body {
   padding: 0;
 }
 
-/* Floating Photo Admin Button */
-.photo-admin-bar {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 1000;
-}
-
-.photo-admin-btn {
-  background: rgba(44, 42, 41, 0.88);
-  color: #FFF;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 8px 14px;
-  border-radius: 24px;
-  font-size: 13px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  box-shadow: var(--shadow-float);
-  backdrop-filter: blur(8px);
-  transition: all 0.2s ease;
-}
-
-.photo-admin-btn:hover {
-  background: var(--gold-dark);
-  transform: translateY(-2px);
-}
-
 /* Mobile Wrapper (Fixed 430px max width for authentic mobile view) */
 .mobile-wrapper {
   width: 100%;
