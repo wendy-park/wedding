@@ -182,6 +182,7 @@
     table.appendChild(headRow);
 
     var row = document.createElement('tr');
+    var cell;
     for (var b = 0; b < firstDow; b++) { row.appendChild(document.createElement('td')); }
     for (var d = 1; d <= daysInMonth; d++) {
       var dow = (firstDow + d - 1) % 7;
