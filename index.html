@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>석익준 ♥ 박규리 결혼합니다</title>
+
+  <!-- Open Graph / KakaoTalk Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="석익준 ♥ 박규리 결혼합니다">
+  <meta property="og:description" content="2027년 6월 12일 토요일 오후 2시 50분 | 루이비스컨벤션 강서점 8층">
+  <meta property="og:image" content="images/cover.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Photo Manager Button -->
+  <div class="photo-admin-bar">
+    <button id="open-photo-manager-btn" class="photo-admin-btn" title="스튜디오 수정본 사진 바로 교체하기">
+      <span class="icon">📷</span>
+      <span class="text">사진 실시간 업데이트</span>
+    </button>
+  </div>
+
+  <div class="mobile-wrapper">
+
+    <!-- 1. MAIN COVER -->
+    <section class="section cover-section">
+      <div class="cover-header">
+        <p class="en-sub">WEDDING INVITATION</p>
+        <h1 class="couple-names">석익준 <span class="heart">♥</span> 박규리</h1>
+      </div>
+
+      <div class="cover-image-container">
+        <img id="main-cover-img" src="images/cover.jpg" alt="석익준 박규리 웨딩 커버 사진" class="cover-img">
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="cover-info">
+        <p class="date-text" id="cover-date-display">2027. 06. 12 토요일 오후 2:50</p>
+        <p class="venue-text" id="cover-venue-display">루이비스컨벤션 강서점 8층 세인트그레이스홀</p>
+      </div>
+
+      <div class="scroll-down-indicator">
+        <span>SCROLL</span>
+        <div class="arrow-down"></div>
+      </div>
+    </section>
+
+    <!-- 2. INVITATION MESSAGE -->
+    <section class="section greeting-section">
+      <p class="section-en-title">INVITATION</p>
+      <h2 class="section-title">소중한 분들을 초대합니다</h2>
+      <div class="gold-divider"></div>
+
+      <div class="greeting-message" id="greeting-message-box">
+        <!-- Injected from config.js -->
+      </div>
+
+      <div class="family-relation">
+        <div class="family-row">
+          <span class="parents" id="groom-parents">석부모님 · 석어머님</span>
+          <span class="relation">의 장남</span>
+          <span class="name groom-highlight" id="groom-name">익준</span>
+        </div>
+        <div class="family-row">
+          <span class="parents" id="bride-parents">박부모님 · 박어머님</span>
+          <span class="relation">의 장녀</span>
+          <span class="name bride-highlight" id="bride-name">규리</span>
+        </div>
+      </div>
+
+      <div class="contact-action-box">
+        <button class="btn-outline" id="open-contact-modal-btn">
+          📞 신랑 & 신부에게 축하 연락하기
+        </button>
+      </div>
+    </section>
+
+    <!-- 3. CALENDAR & D-DAY -->
+    <section class="section calendar-section">
+      <p class="section-en-title">DATE & TIME</p>
+      <h2 class="section-title">예식 일시 안내</h2>
+      <div class="gold-divider"></div>
+
+      <p class="date-large">2027년 6월 12일 토요일</p>
+      <p class="time-large">오후 2시 50분</p>
+
+      <!-- Mini Calendar -->
+      <div class="mini-calendar-card">
+        <div class="cal-header">2027. 06 JUNE</div>
+        <div class="cal-grid">
+          <span class="cal-day sun">일</span>
+          <span class="cal-day">월</span>
+          <span class="cal-day">화</span>
+          <span class="cal-day">수</span>
+          <span class="cal-day">목</span>
+          <span class="cal-day">금</span>
+          <span class="cal-day sat">토</span>
+
+          <span class="cal-num empty"></span>
+          <span class="cal-num empty"></span>
+          <span class="cal-num">1</span>
+          <span class="cal-num">2</span>
+          <span class="cal-num">3</span>
+          <span class="cal-num">4</span>
+          <span class="cal-num sat">5</span>
+
+          <span class="cal-num sun">6</span>
+          <span class="cal-num">7</span>
+          <span class="cal-num">8</span>
+          <span class="cal-num">9</span>
+          <span class="cal-num">10</span>
+          <span class="cal-num">11</span>
+          <span class="cal-num sat target-wedding-day">12<span class="day-heart">♥</span></span>
+
+          <span class="cal-num sun">13</span>
+          <span class="cal-num">14</span>
+          <span class="cal-num">15</span>
+          <span class="cal-num">16</span>
+          <span class="cal-num">17</span>
+          <span class="cal-num">18</span>
+          <span class="cal-num sat">19</span>
+
+          <span class="cal-num sun">20</span>
+          <span class="cal-num">21</span>
+          <span class="cal-num">22</span>
+          <span class="cal-num">23</span>
+          <span class="cal-num">24</span>
+          <span class="cal-num">25</span>
+          <span class="cal-num sat">26</span>
+
+          <span class="cal-num sun">27</span>
+          <span class="cal-num">28</span>
+          <span class="cal-num">29</span>
+          <span class="cal-num">30</span>
+          <span class="cal-num empty"></span>
+          <span class="cal-num empty"></span>
+          <span class="cal-num empty"></span>
+        </div>
+      </div>
+
+      <!-- D-DAY COUNTDOWN -->
+      <div class="dday-countdown-box">
+        <p class="dday-tag" id="dday-title">익준 ♥ 규리의 결혼식까지</p>
+        <div class="countdown-units">
+          <div class="unit-box">
+            <span class="number" id="cd-days">000</span>
+            <span class="label">DAYS</span>
+          </div>
+          <span class="colon">:</span>
+          <div class="unit-box">
+            <span class="number" id="cd-hours">00</span>
+            <span class="label">HOUR</span>
+          </div>
+          <span class="colon">:</span>
+          <div class="unit-box">
+            <span class="number" id="cd-minutes">00</span>
+            <span class="label">MIN</span>
+          </div>
+          <span class="colon">:</span>
+          <div class="unit-box">
+            <span class="number" id="cd-seconds">00</span>
+            <span class="label">SEC</span>
+          </div>
+        </div>
+        <p class="dday-msg" id="dday-submessage">소중한 날, 함께해 주셔서 감사합니다.</p>
+      </div>
+    </section>
+
+    <!-- 4. GALLERY -->
+    <section class="section gallery-section">
+      <p class="section-en-title">GALLERY</p>
+      <h2 class="section-title">우리의 순간들</h2>
+      <div class="gold-divider"></div>
+      <p class="gallery-hint">사진을 누르면 크게 볼 수 있습니다</p>
+
+      <div class="gallery-grid" id="gallery-grid-container">
+        <!-- 8 photos dynamically rendered -->
+      </div>
+    </section>
+
+    <!-- 5. LOCATION & NAVIGATION -->
+    <section class="section location-section">
+      <p class="section-en-title">LOCATION</p>
+      <h2 class="section-title">오시는 길</h2>
+      <div class="gold-divider"></div>
+
+      <div class="venue-info-card">
+        <h3 class="venue-main-title" id="loc-venue-name">루이비스컨벤션 강서점</h3>
+        <p class="venue-hall-sub" id="loc-venue-hall">8층 세인트그레이스홀 (단독홀)</p>
+        <p class="venue-address" id="loc-venue-address">서울특별시 강서구 양천로 476, 금부빌딩 8F</p>
+        <p class="venue-phone" id="loc-venue-phone">TEL. 02-2658-1002</p>
+      </div>
+
+      <!-- Quick Nav Buttons -->
+      <div class="nav-app-buttons">
+        <a id="btn-nav-kakao" href="#" target="_blank" class="nav-btn kakao">
+          <span class="nav-icon">🟡</span> 카카오맵
+        </a>
+        <a id="btn-nav-naver" href="#" target="_blank" class="nav-btn naver">
+          <span class="nav-icon">🟢</span> 네이버 지도
+        </a>
+        <a id="btn-nav-tmap" href="#" target="_blank" class="nav-btn tmap">
+          <span class="nav-icon">🔴</span> 티맵
+        </a>
+      </div>
+
+      <!-- Transit Details -->
+      <div class="transit-guide-box">
+        <div class="transit-item">
+          <div class="transit-icon subway">🚇</div>
+          <div class="transit-text">
+            <strong>지하철 이용 시</strong>
+            <p><strong>9호선 가양역 10번 출구</strong> 도보 2분 (약 110m)<br>
+            <span class="tag-accent">9호선 급행 열차 정차역</span></p>
+          </div>
+        </div>
+
+        <div class="transit-item">
+          <div class="transit-icon bus">🚌</div>
+          <div class="transit-text">
+            <strong>버스 이용 시</strong>
+            <p><strong>가양역·마포고등학교 정류장</strong> 하차<br>
+            • 간선 : 652, 672<br>
+            • 지선 : 6627, 6632, 6643, 6712</p>
+          </div>
+        </div>
+
+        <div class="transit-item">
+          <div class="transit-icon car">🚗</div>
+          <div class="transit-text">
+            <strong>자가용 & 주차 안내</strong>
+            <p><strong>네비게이션</strong> : '루이비스컨벤션 강서점' 또는 '금부빌딩'<br>
+            • <strong>본관 주차장</strong> : 금부타워 B2층 ~ B6층 (400대, <strong>하객 2시간 무료</strong>)<br>
+            • <strong>제2주차장</strong> : 아벨테크노 지식산업센터 (200대, <strong>3시간 무료 지원</strong>)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ACCOUNT / GIFT -->
+    <section class="section account-section">
+      <p class="section-en-title">ACCOUNT</p>
+      <h2 class="section-title">마음 전하실 곳</h2>
+      <div class="gold-divider"></div>
+      <p class="account-desc">
+        참석이 어려워 축하의 마음을 보내주실 분들을 위해<br>
+        소중한 마음 감사히 간직하겠습니다.
+      </p>
+
+      <!-- Groom Account Accordion -->
+      <div class="account-accordion">
+        <button class="accordion-header" id="acc-groom-toggle">
+          <span>신랑측 계좌번호 확인하기</span>
+          <span class="arrow">▼</span>
+        </button>
+        <div class="accordion-content" id="acc-groom-body">
+          <div class="account-item">
+            <div class="acc-info">
+              <span class="bank-name" id="groom-acc-bank">국민은행</span>
+              <span class="acc-num" id="groom-acc-num">000-000-000000</span>
+              <span class="acc-holder" id="groom-acc-holder">예금주 : 석익준</span>
+            </div>
+            <button class="btn-copy" onclick="copyAccount('groom')">복사</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bride Account Accordion -->
+      <div class="account-accordion">
+        <button class="accordion-header" id="acc-bride-toggle">
+          <span>신부측 계좌번호 확인하기</span>
+          <span class="arrow">▼</span>
+        </button>
+        <div class="accordion-content" id="acc-bride-body">
+          <div class="account-item">
+            <div class="acc-info">
+              <span class="bank-name" id="bride-acc-bank">신한은행</span>
+              <span class="acc-num" id="bride-acc-num">000-000-000000</span>
+              <span class="acc-holder" id="bride-acc-holder">예금주 : 박규리</span>
+            </div>
+            <button class="btn-copy" onclick="copyAccount('bride')">복사</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. RSVP (ATTENDANCE) -->
+    <section class="section rsvp-section">
+      <p class="section-en-title">RSVP</p>
+      <h2 class="section-title">참석 여부 전달</h2>
+      <div class="gold-divider"></div>
+      <p class="rsvp-desc">
+        원활한 예식 및 식사 준비를 위해<br>
+        참석 여부를 미리 알려주시면 감사하겠습니다.
+      </p>
+
+      <form id="rsvp-form" class="rsvp-form" onsubmit="handleRSVP(event)">
+        <div class="form-group">
+          <label>구분</label>
+          <div class="radio-row">
+            <label class="radio-label">
+              <input type="radio" name="side" value="신랑측" checked> 신랑측
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="side" value="신부측"> 신부측
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="rsvp-name">성함</label>
+          <input type="text" id="rsvp-name" placeholder="참석자 성함을 입력해주세요" required>
+        </div>
+
+        <div class="form-group">
+          <label>참석 여부</label>
+          <div class="radio-row">
+            <label class="radio-label">
+              <input type="radio" name="attend" value="참석" checked> 참석
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="attend" value="미정"> 미정
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="attend" value="불참"> 불참
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="rsvp-count">동행 인원 (본인 포함)</label>
+          <select id="rsvp-count">
+            <option value="1">1명</option>
+            <option value="2">2명</option>
+            <option value="3">3명</option>
+            <option value="4">4명 이상</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>식사 여부</label>
+          <div class="radio-row">
+            <label class="radio-label">
+              <input type="radio" name="meal" value="식사함" checked> 식사 예정
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="meal" value="식사안함"> 식사 안함
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit-rsvp">참석 여부 전달하기</button>
+      </form>
+    </section>
+
+    <!-- 8. SHARE & FOOTER -->
+    <footer class="footer-section">
+      <div class="share-buttons">
+        <button class="btn-share link" onclick="copyPageLink()">
+          🔗 청첩장 링크 복사
+        </button>
+      </div>
+
+      <div class="footer-credits">
+        <p class="footer-names">IKJUN & GYULI</p>
+        <p class="footer-copy">2027.06.12 SAT PM 2:50 | 루이비스컨벤션 강서점</p>
+      </div>
+    </footer>
+
+  </div><!-- /.mobile-wrapper -->
+
+
+  <!-- MODAL 1: CONTACT MODAL -->
+  <div id="contact-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>축하 연락하기</h3>
+        <button class="modal-close" onclick="closeContactModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="contact-person-card">
+          <div class="person-role">신랑 석익준</div>
+          <div class="person-btns">
+            <a href="tel:010-0000-0000" class="btn-call">📞 전화</a>
+            <a href="sms:010-0000-0000" class="btn-sms">💬 문자</a>
+          </div>
+        </div>
+        <div class="contact-person-card">
+          <div class="person-role">신부 박규리</div>
+          <div class="person-btns">
+            <a href="tel:010-8700-9597" class="btn-call">📞 전화</a>
+            <a href="sms:010-8700-9597" class="btn-sms">💬 문자</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL 2: LIGHTBOX PHOTO MODAL -->
+  <div id="lightbox-modal" class="lightbox-overlay" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightboxDirect()">✕</button>
+      <img id="lightbox-img" src="" alt="웨딩 사진 확대">
+      <div class="lightbox-nav">
+        <button class="lightbox-prev" onclick="prevLightbox(event)">‹</button>
+        <span id="lightbox-counter" class="lightbox-counter">1 / 8</span>
+        <button class="lightbox-next" onclick="nextLightbox(event)">›</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL 3: ⭐️ REAL-TIME PHOTO UPDATE MANAGER (규리 님 전용 사진 교체 모달) -->
+  <div id="photo-manager-modal" class="modal-overlay">
+    <div class="modal-card photo-admin-card">
+      <div class="modal-header">
+        <h3>📷 사진 실시간 업데이트 관리</h3>
+        <button class="modal-close" onclick="closePhotoManager()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="admin-notice">
+          스튜디오 수정본 사진이 나오면 아래 버튼을 눌러 사진을 선택해 주세요.<br>
+          <strong>화면에 즉시 반영되어 모바일 청첩장 모습을 바로 확인하실 수 있습니다!</strong>
+        </p>
+
+        <!-- Cover Photo Upload -->
+        <div class="upload-slot-group">
+          <label class="slot-title">👑 메인 커버 사진 (1장)</label>
+          <div class="slot-row">
+            <div class="thumb-preview" id="thumb-cover">
+              <img src="images/cover.jpg" alt="커버 미리보기">
+            </div>
+            <div class="slot-controls">
+              <input type="file" id="input-cover" accept="image/*" class="file-input" onchange="previewImage(event, 'cover')">
+              <label for="input-cover" class="btn-file-select">사진 선택하기</label>
+            </div>
+          </div>
+        </div>
+
+        <hr class="admin-divider">
+
+        <!-- Gallery Photos Upload (1~8) -->
+        <div class="upload-slot-group">
+          <label class="slot-title">🖼️ 갤러리 사진 (최대 8장)</label>
+          <div class="gallery-upload-grid" id="gallery-upload-slots">
+            <!-- 8 upload slots generated by JS -->
+          </div>
+        </div>
+
+        <div class="admin-action-bar">
+          <button class="btn-admin-apply" onclick="applyPhotoChanges()">✨ 변경사항 화면에 반영하기</button>
+          <button class="btn-admin-reset" onclick="resetToDefaultPhotos()">기본값으로 되돌리기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast-message" class="toast">계좌번호가 복사되었습니다.</div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
